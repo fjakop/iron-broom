@@ -1,6 +1,6 @@
 # Iron Broom
 
-Cleanup docker containers, volumes and images in a [Rancher|http://rancher.com/] infrastructure.
+Cleanup docker containers, volumes and images in a [Rancher](http://rancher.com/) infrastructure.
 
 This image will periodically clean up exited standalone containers and remove images and volumes that aren't in use by any container (a.k.a 'dangling'). If a container is part of a stack it will be left alone, as stack-managed containers should be started, stopped & removed by the stack.
 
