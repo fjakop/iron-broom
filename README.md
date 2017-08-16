@@ -1,3 +1,4 @@
+<img src="https://github.com/fjakop/iron-broom/blob/master/rancher/catalog/templates/iron-broom/catalogIcon-iron-broom.png" width="100">
 # Iron Broom
 
 Cleanup docker containers, volumes and images in a [Rancher](http://rancher.com/) infrastructure.
