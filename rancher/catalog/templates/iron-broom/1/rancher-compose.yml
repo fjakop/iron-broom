@@ -1,0 +1,41 @@
+version: '2'
+
+catalog:
+  name: "iron-broom"
+  version: "0.0.1"
+  description: "Cleanup terminated standalone containers, volumes and images"
+  minimum_rancher_version: v1.5.0
+  # maximum_rancher_version:
+  # upgrade_from: # The previous versions that this template can be upgraded from
+  questions:
+    - variable: "CLEAN_PERIOD"
+      label: "Clean period"
+      description: "Time in seconds between cleanup runs"
+      type: "int"
+      default: 1800
+      required: true
+
+    - variable: "DECAY_TIME"
+      label: "Decay time"
+      description: "Time in minutes a container must have been dead before it gets pruned"
+      type: "int"
+      default: 30
+      required: true
+
+    - variable: "DEBUG"
+      label: "Debug"
+      description: "Debug output"
+      type: "boolean"
+      default: false
+      required: true
+
+    - variable: "PRETEND"
+      label: "Pretend mode"
+      description: "Do not delete, just pretend to do so"
+      type: "boolean"
+      default: true
+      required: false
+
+services:
+  cleanup:
+    start_on_create: true

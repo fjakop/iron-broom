@@ -8,7 +8,7 @@ Normally any Docker containers that exit are still kept on disk until `docker rm
 
 # Flow
 
-* find all terminated containers on the host
+* find all terminated containers on the host which are dead longer than `DECAY_TIME`
 * select containers without `io.rancher.stack.name` label
 * delete them
 * delete dangling volumes & images
@@ -18,6 +18,8 @@ Normally any Docker containers that exit are still kept on disk until `docker rm
 The default parameters can be overridden by setting environment variables on the container using the docker run -e flag.
 
 `CLEAN_PERIOD` (integer, default `1800`) sleep seconds between cleanup runs
+
+`DECAY_TIME` (integer, default `30`) minutes a container must have been dead before it gets purged
 
 `DEBUG` (boolean, default `false`) debug output
 
