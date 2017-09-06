@@ -29,7 +29,7 @@ The default parameters can be overridden by setting environment variables on the
 
 # Deployment
 
-This image is deployed best via Rancher catalog. Appropriate `docker-compose.yml` and `rancher-compose.yml` are included in catalog subfolder.
+This image is deployed best via [Rancher catalog](https://github.com/fjakop/rancher-catalog). Appropriate `docker-compose.yml` and `rancher-compose.yml` are included in catalog subfolder.
 
 The image uses the Docker client to to list and remove containers and images. For this reason the Docker client and socket is mapped into the container.
 
